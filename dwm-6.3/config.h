@@ -72,6 +72,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *firefox[]  = { "firefox", NULL };
 static const char *lightup[]  = {"xbacklight", "-inc", "10", NULL};              
 static const char *lightdown[]  = {"xbacklight", "-dec", "5", NULL};            
 static const char *soundup[]  = {"amixer", "-qM", "sset", "Master", "5%+", "unmute", NULL};
@@ -82,7 +83,8 @@ static const char *mute[]  = {"amixer", "-qM", "sset", "Master", "toggle", NULL}
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,            						 XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_F10,      spawn,          {.v = firefox } },
+	{ MODKEY,            		 XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -108,7 +110,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,						              XK_c,      killclient,     {0} },
+	{ MODKEY,	              XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
