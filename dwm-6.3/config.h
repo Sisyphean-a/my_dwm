@@ -36,7 +36,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "main", "browser", "game", "backstage" };
+static const char *tags[] = { "7", "8", "9", "0" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -131,15 +131,15 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_s,      show,           {0} },
 	{ MODKEY,                       XK_H,      hide,           {0} },
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
+	TAGKEYS(                        XK_7,                      0)
+	TAGKEYS(                        XK_8,                      1)
+	TAGKEYS(                        XK_9,                      2)
+	TAGKEYS(                        XK_0,                      3)
+	TAGKEYS(                        XK_1,                      4)
+	TAGKEYS(                        XK_2,                      5)
+	TAGKEYS(                        XK_3,                      6)
+	TAGKEYS(                        XK_4,                      7)
+	TAGKEYS(                        XK_5,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY,             		XK_Left,   spawn,          {.v = lightup } },  
 	{ MODKEY,             		XK_Right,  spawn,          {.v = lightdown } },   
