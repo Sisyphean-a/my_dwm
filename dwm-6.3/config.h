@@ -77,6 +77,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *firefox[]  = { "firefox", NULL };
+static const char *Flameshot[]  = { "flameshot","gui", NULL };
 static const char *lightup[]  = {"xbacklight", "-inc", "10", NULL};              
 static const char *lightdown[]  = {"xbacklight", "-dec", "5", NULL};            
 static const char *soundup[]  = {"amixer", "-qM", "sset", "Master", "5%+", "unmute", NULL};
@@ -87,8 +88,9 @@ static const char *mute[]  = {"amixer", "-qM", "sset", "Master", "toggle", NULL}
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_F10,      spawn,          {.v = firefox } },
-	{ MODKEY,            		 XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_F10,    spawn,          {.v = firefox } },
+	{ ControlMask|ShiftMask,        XK_a,      spawn,          {.v = Flameshot} },
+	{ MODKEY,             	 	 XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = -1 } },
@@ -134,12 +136,12 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      0)
 	TAGKEYS(                        XK_8,                      1)
 	TAGKEYS(                        XK_9,                      2)
-	TAGKEYS(                        XK_0,                      3)
-	TAGKEYS(                        XK_1,                      4)
-	TAGKEYS(                        XK_2,                      5)
-	TAGKEYS(                        XK_3,                      6)
-	TAGKEYS(                        XK_4,                      7)
-	TAGKEYS(                        XK_5,                      8)
+	TAGKEYS(                        XK_1,                      3)
+	TAGKEYS(                        XK_2,                      4)
+	TAGKEYS(                        XK_3,                      5)
+	TAGKEYS(                        XK_4,                      6)
+	TAGKEYS(                        XK_5,                      7)
+	TAGKEYS(                        XK_6,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY,             		XK_Left,   spawn,          {.v = lightup } },  
 	{ MODKEY,             		XK_Right,  spawn,          {.v = lightdown } },   
